@@ -1,0 +1,115 @@
+stylesheet
+  : [ [ ruleset ] [S]* ]*
+  ;
+combinator
+  : PLUS | GREATER
+  ;
+unary_operator
+  : '-' | PLUS
+  ;
+property
+  : IDENT
+  ;
+ruleset
+  : selector [ COMMA selector ]*
+    LBRACE declaration [ ';' declaration ]* '}'
+  ;
+selector
+  : simple_selector [ combinator simple_selector ]*
+  ;
+simple_selector
+  : element_name [ HASH | class | attrib | pseudo ]*
+  | [ HASH | class | attrib | pseudo ]+
+  ;
+class
+  : '.' IDENT
+  ;
+element_name
+  : IDENT | '*'
+  ;
+attrib
+  : '[' IDENT [ [ '=' | INCLUDES | DASHMATCH ]
+    [ IDENT | STRING ] ]? ']'
+  ;
+pseudo
+  : ':' [ IDENT | FUNCTION IDENT? ')' ]
+  ;
+declaration
+  : property ':' expr
+  ;
+expr
+  : term [ COMMA term ]*
+  ;
+term
+  : unary_operator?
+    [ NUMBER | PERCENTAGE | LENGTH | EMS | EXS | ANGLE |
+      TIME | FREQ ]
+  | STRING | IDENT | URI | hexcolor | function
+  ;
+function
+  : FUNCTION expr ')'
+  ;
+hexcolor
+  : HASH S*
+  ;
+
+%option case-insensitive
+
+nmstart		[_a-z]
+nmchar		[_a-z0-9-]
+string1		\"([^\n\r\f\\"]|\\{nl})*\"
+string2		\'([^\n\r\f\\']|\\{nl})*\'
+invalid1	\"([^\n\r\f\\"]|\\{nl})*
+invalid2	\'([^\n\r\f\\']|\\{nl})*
+
+comment		\/\*[^*]*\*+([^/*][^*]*\*+)*\/
+ident		-?{nmstart}{nmchar}*
+name		{nmchar}+
+num		[0-9]+|[0-9]*"."[0-9]+
+string		{string1}|{string2}
+invalid		{invalid1}|{invalid2}
+url		([!#$%&*-~])*
+s		[ \t\r\n\f]+
+w		{s}?
+nl		\n|\r\n|\r|\f
+
+%%
+
+{s}			{return S;}
+
+\/\*[^*]*\*+([^/*][^*]*\*+)*\/		/* ignore comments */
+{s}+\/\*[^*]*\*+([^/*][^*]*\*+)*\/	{unput(' '); /*replace by space*/}
+
+"~="			{return INCLUDES;}
+"|="			{return DASHMATCH;}
+
+{w}"{"			{return LBRACE;}
+{w}"+"			{return PLUS;}
+{w}">"			{return GREATER;}
+{w}","			{return COMMA;}
+
+{string}		{return STRING;}
+{invalid}		{return INVALID; /* unclosed string */}
+
+{ident}			{return IDENT;}
+
+"#"{name}		{return HASH;}
+
+{num}"em"		{return EMS;}
+{num}"ex"		{return EXS;}
+{num}"px"		{return LENGTH;}
+{num}"cm"		{return LENGTH;}
+{num}"mm"		{return LENGTH;}
+{num}"in"		{return LENGTH;}
+{num}"pt"		{return LENGTH;}
+{num}"pc"		{return LENGTH;}
+{num}{ident}	{return DIMENSION;}
+
+{num}%			{return PERCENTAGE;}
+{num}			{return NUMBER;}
+
+"url("{w}{string}{w}")"	{return URI;}
+"url("{w}{url}{w}")"	{return URI;}
+{ident}"("		{return FUNCTION;}
+
+.

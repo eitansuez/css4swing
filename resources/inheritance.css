@@ -1,0 +1,10 @@
+@namespace awt java.awt
+
+awt|Container
+{
+  font-size: 24pt;
+}
+.required
+{
+  font-size: 12pt;
+}

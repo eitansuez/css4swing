@@ -1,0 +1,17 @@
+
+#main-pnl
+{
+  background-color: #f99;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#child-pnl
+{
+  background-color: #66f;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}

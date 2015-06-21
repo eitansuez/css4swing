@@ -1,0 +1,13 @@
+About applet..
+
+I haven't yet automated its production.
+
+First, to get around security permissions of applets,
+  i had to disable:  awteventlistener hook, and setproperty(swing.aatext)
+
+Second, in jar file, must bundle all dependencies:
+  - compiled code from both src/ adn test/
+  - because demo ui is build with the idea builder, includes also idea classes
+     and jgoodies forms jar
+  - and antlr-runtime jar
+

@@ -1,0 +1,46 @@
+TASK LIST  April 2007
+------------------------------------
+- replace awteventlistener with an aspect:  review ramnivas' book
+------------------------------------
+- markup jmatter gui semantically with css class names
+- remove all direct use of Font objects and such, 
+- remove all overriding of getInsets() which obscures/masks borders
+- produce a default stylesheet for jmatter
+- produce alternate stylesheets for jmatter apps (themes)
+------------------------------------
+- test cssborder thoroughly
+- colors:  support rgb() function and new css3 rgba() function for specifying opacity
+------------------------------------
+- complete selector support:  child/sibling/descendent
+- support pseudoclasses and pseudoelements? :hover, etc..
+------------------------------------
+- make sure that styling errors are not fatal;
+- make sure that styling errors generate warnings as feedback for developers
+------------------------------------
+- implement outstanding linestyle types:  groove, ridge, inset, outset, double
+------------------------------------
+term                 -> select term
+term1 > term2        -> select (child term1 term2)
+term1 term2          -> select (descendent term1 term2)
+term1 term2 + term3  -> select (sibling (descendent term1 term2) term3)
+
+(descendent term1 term2) means:
+  "select all matching term2's that are descendents of term1"
+(sibling x y) means:
+  "select all y's that are sibling's of anything that matches x"
+
+need to build a tree grammar for selectors
+
+-----more----
+  1. implement additional properties
+  2. dynamic application:
+    - need a default stylesheet
+    - applying a stylesheet should imply certain defaults.
+      i.e. removing border declaration should actually imply
+        no border if that's the default.
+      likewise for background-color:  removing declaration should
+      reset background-color to the default.
+  3. background-color: a container's children should by default
+      be transparent (i.e. not opaque) so that applying background-color
+      on a container shows through properly / as expected.
+

@@ -1,0 +1,65 @@
+@namespace l2f com.l2fprod.common.swing
+
+#main-pnl
+{
+  background-color: white;
+  border: 3px dashed blue;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 10px;
+}
+#body-pnl
+{
+  background-color: #eee;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 1px solid black;
+}
+
+JLabel
+{
+   color: orange;
+   background-color: #000088;
+   font: bold 20pt sans-serif;
+   cursor: pointer;
+   border-bottom: 2px dashed yellow;
+   padding: 5px 20px;
+   text-align: right;
+}
+
+#theone
+{
+   color: white;
+   background-color: blue;
+   font-weight: bold;
+   font-size: 16pt;
+   padding: 5px;
+}
+
+JButton.required
+{
+   color: green;
+   background-color: #abc;
+   cursor: wait;
+   font: bold 24pt "Comic Sans MS", sans-serif;
+}
+JButton
+{
+  text-align: right;
+  font-size: 16pt;
+  padding: 5px 20px;
+  border: 1px solid black;
+}
+
+l2f|JOutlookBar
+{
+  color: olive;
+  font-size: 16pt;
+}
+
+.left-sidebar
+{
+  border: 2px solid green;
+  background-color: white;
+}
+

@@ -1,0 +1,52 @@
+@namespace swingx org.jdesktop.swingx
+
+.leftSide
+{
+   background-color: #88f;
+}
+.rightSide
+{
+   background-color: #f88;
+}
+
+.leftSide JButton
+{
+  font-size: 16pt;
+}
+.rightSide JButton
+{
+  font-size: 10pt;
+}
+
+JButton + JButton
+{
+  background-color: green;
+  color: white;
+}
+JPanel > JButton
+{
+  border: 2px solid yellow;
+}
+
+swingx|JXPanel
+{
+   border: 1px solid black;
+   margin: 20px;
+   padding: 7px;
+   opacity: 0.7;
+   border-radius: 15px;
+}
+swingx|JXPanel > swingx|JXPanel
+{
+   opacity: 0.0;
+}
+/*
+swingx|JXPanel
+{
+  background-image: resource("duke.gif");
+}
+swingx|JXPanel > swingx|JXPanel
+{
+  background-image: none;
+}
+*/

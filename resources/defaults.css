@@ -1,0 +1,22 @@
+JComponent
+{
+  font-weight: normal;
+  font-style: normal;
+  font-size: 12pt;
+  font-family: sans-serif;
+  color: black;
+  border-width: 0px;
+  background-color: transparent;
+  background-image: none;
+}
+JPanel, JLabel
+{
+  background-color: #eee;
+  padding: 0px;
+  margin: 0px;
+}
+JButton
+{
+  border: 1px solid black;
+  padding: 5px 10px;
+}

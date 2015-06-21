@@ -1,0 +1,30 @@
+JPanel
+{
+  background-color: #eee;
+}
+.heading
+{
+  font-size: 16pt;
+  font-weight: bold;
+  color: #008800;
+}
+.mainPnl
+{
+  border: 1px solid green;
+  margin: 5px;
+  padding: 5px;
+}
+JLabel
+{
+  color: #444;
+}
+JTextField, JComboBox
+{
+  background-color: #88dd88;
+}
+JButton
+{
+  color: red;
+  font-style: italic;
+  cursor: pointer;
+}

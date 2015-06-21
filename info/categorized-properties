@@ -1,0 +1,141 @@
+aural:
+------
+azimuth
+cue-after
+cue-before
+elevation
+pause-after
+pause-before
+pause
+pitch-range
+pitch
+play-during
+richness
+speak-header
+speak-punctuation
+speak
+speech-rate
+stress
+voice-family
+volume
+
+
+
+print:
+------
+page-break-after
+page-break-before
+page-break-inside
+orphans
+widows
+
+document-related, perhaps esoteric, of low importance, perhaps not even applicable to swing
+-----------------
+white-space
+quotes
+counter-increment
+counter-reset
+list-style-image
+list-style-position
+list-style-type
+list-style
+content
+
+display
+visibility
+
+positioning and other:
+------------
+bottom
+left
+position
+right
+top
+clear
+float
+overflow
+clip
+z-index
+
+
+table-related:
+--------------
+border-collapse
+border-spacing
+empty-cells
+table-layout
+caption-side
+
+i18n:
+-----
+direction
+unicode-bidi
+
+
+most pertinent properties:
+--------------------------
+
+[x] border-color
+[x] border-style
+[x] border-width
+[x] border-top, border-right, border-bottom, border-left
+[x] border-top-color, border-right-color, border-bottom-color, border-left-color
+[x] border-top-style, border-right-style, border-bottom-style, border-left-style
+[x] border-top-width, border-right-width, border-bottom-width, border-left-width
+[x] border
+
+outline-color
+outline-style
+outline
+
+[x] margin-right
+[x] margin-left
+[x] margin-top
+[x] margin-bottom
+[x] margin
+
+[x] padding-top
+[x] padding-right
+[x] padding-bottom
+[x] padding-left
+[x] padding
+
+[x] color
+
+background-attachment
+[x] background-color
+background-image
+background-position
+background-repeat
+background
+
+[x]cursor
+
+[x] font-family
+[x] font-size
+[x] font-style
+font-variant
+[x] font-weight
+[x] font
+
+text-decoration
+text-transform
+
+width
+min-width
+max-width
+height
+min-height
+max-height
+
+vertical-align
+
+text & paragraph -related
+-------------------------
+text-indent
+letter-spacing
+word-spacing
+line-height
+text-align
+
+
